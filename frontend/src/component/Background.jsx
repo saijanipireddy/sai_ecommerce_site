@@ -3,16 +3,16 @@ import React from 'react'
 function Background({heroCount}) {
 
     if(heroCount === 0) {
-        return <img src="https://t4.ftcdn.net/jpg/05/96/62/65/240_F_596626503_jrzjZNYStDexiWxQFqO7oCh6M8PdMlJs.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
+        return <img src="https://res.cloudinary.com/dymntfrwl/image/upload/v1755863330/WhatsApp_Image_2025-08-22_at_5.05.14_PM_1_lsgmzu.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
         
     }else if(heroCount === 1) {
-        return <img src="https://t3.ftcdn.net/jpg/05/96/62/32/240_F_596623252_MrSptpFnvBHZbeCSCegHFASPBBXoNi9W.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
+        return <img src="https://res.cloudinary.com/dymntfrwl/image/upload/v1755863360/WhatsApp_Image_2025-08-22_at_5.05.15_PM_gpxpcm.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
 
     }else if(heroCount === 2) {
-        return <img src="https://t4.ftcdn.net/jpg/05/96/61/99/240_F_596619956_pMBtjoGHCqZKzRWwsYUY41xAIk2T2dvt.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
+        return <img src="https://res.cloudinary.com/dymntfrwl/image/upload/v1755863368/WhatsApp_Image_2025-08-22_at_5.05.15_PM_1_ddchsx.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
 
     }else if(heroCount === 3) {
-        return <img src="https://t4.ftcdn.net/jpg/06/49/86/21/240_F_649862124_w91wlS08WfP2xSy9X0qVio5EFPtEWw4K.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
+        return <img src="https://res.cloudinary.com/dymntfrwl/image/upload/v1755863378/WhatsApp_Image_2025-08-22_at_5.05.14_PM_ejwqz4.jpg" alt="" className='w-[100%] h-[100%] float-left overflow-auto object-cover' />
 
     }
 

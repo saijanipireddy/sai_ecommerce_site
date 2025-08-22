@@ -4,6 +4,9 @@ import { shopDataContext } from '../context/ShopContext';
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfStroke } from "react-icons/fa6";
 import RelatedProduct from '../component/RelatedProduct';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Loading from '../component/Loading';
 
 function ProductDetail() {
   let { productId } = useParams();
@@ -16,6 +19,7 @@ function ProductDetail() {
   const [image3, setImage3] = useState('');
   const [image4, setImage4] = useState('');
   const [size, setSize] = useState('');
+  const [loading,setLoading] = useState(false)
 
   const fetchProductData = () => {
     const foundProduct = products.find(item => item._id === productId);
@@ -38,6 +42,23 @@ function ProductDetail() {
       console.log("Product Data:", productData);
     }
   }, [productData]);
+    
+  
+  const handleAddToCart = () => {
+  if (!size) {
+    toast.warning("Please select a size before adding to cart!");
+    return;
+  }
+
+  setLoading(true);
+  addtoCart(productData._id, size);
+
+  setTimeout(() => {
+    toast.success(`${productData.name} added to cart!`);
+    setLoading(false);
+  }, 1000); 
+};
+
 
   return productData ? (
     <div>
@@ -86,10 +107,10 @@ function ProductDetail() {
               ))}
             </div>
             <button
-              className='text-[16px] active:bg-slate-500 cursor-pointer bg-[#495b61c9] py-[10px] px-[20px] rounded-2xl mt-[10px] border-[1px] border-[#80808049] text-[white] shadow-md shadow-black'
-              onClick={() => addtoCart(productData._id, size)}
+              className='text-[16px] active:bg-slate-500 cursor-pointer bg-[#495b61c9] py-[10px] px-[20px] rounded-2xl mt-[10px] border-[1px] border-[#80808049] text-[white] shadow-md shadow-black '
+              onClick={handleAddToCart}
             >
-              Add To Cart
+             {loading ? <Loading/> : "Add To Cart"}
             </button>
           </div>
           <div className='w-[90%] h-[1px] bg-slate-700'></div>

@@ -1,15 +1,14 @@
-// src/context/UserContext.jsx
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { authDataContext } from './authContext';
 import axios from 'axios';
 
-// ✅ Create Context
+
 axios.defaults.withCredentials = true; 
 export const userDataContext = createContext();
 
 export function UserProvider({ children }) {
   const [userData, setUserData] = useState(null);
-  const { serverUrl } = useContext(authDataContext); // comes from AuthProvider
+  const { serverUrl } = useContext(authDataContext);
 
   const getCurrentUser = async () => {
     try {
@@ -20,7 +19,7 @@ export function UserProvider({ children }) {
       setUserData(result.data.user);
       console.log("Fetched User:", result.data.user);
     } catch (error) {
-      console.error("❌ Failed to fetch User:", error);
+      console.error("Failed to fetch User:", error);
       setUserData(null);
     }
   };
@@ -42,5 +41,5 @@ export function UserProvider({ children }) {
   );
 }
 
-// ✅ Default export (so you can `import UserProvider from './UserContext'` if you prefer)
+
 export default UserProvider;

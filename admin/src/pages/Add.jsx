@@ -3,6 +3,8 @@ import Nav from '../component/Nav';
 import Sidebar from '../component/Sidebar';
 import { authDataContext } from '../context/AuthContext';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import Loading from '../component/Loading';
 
 const Add = () => {
   const [image1, setImage1] = useState(null);
@@ -16,9 +18,11 @@ const Add = () => {
   const [price,setPrice] = useState("")
   const [bestSeller,setBestSeller] = useState(false)
   const [sizes,setSizes] = useState([])
+  const [loading,setLoading] = useState(false)
   let {serverUrl}= useContext(authDataContext)
 
  const handleAddProduct = async(e)=>{
+  setLoading(true)
   e.preventDefault()
   try {
     let formData = new FormData()
@@ -36,6 +40,8 @@ const Add = () => {
 
     let result = await axios.post(serverUrl+"/api/product/addproduct",formData,{withCredentials:true})
     console.log(result.data)
+    toast.success("Product Added Successfully")
+    setLoading(false)
     if (result.data){
       setName("")
       setDescription("")
@@ -52,6 +58,8 @@ const Add = () => {
     
   } catch (error) {
     console.log(error)
+    setLoading(false)
+    toast.error("Failed to Add Product")
   }
 
  }
@@ -249,7 +257,7 @@ const Add = () => {
                   <div className={`px-[20px] py-[7px] rounded-lg bg-slate-600 text-[18px] hover:border-[#46d1f7] border-[2px] cursor-pointer ${sizes.includes("M")? "bg-green-400 text-black border-[#46d1f7]": ""}`} onClick={()=>setSizes(prev=>prev.includes("M")? prev.filter(item => item !=="M"):[...prev,"M"])}>M</div>
                   <div className={`px-[20px] py-[7px] rounded-lg bg-slate-600 text-[18px] hover:border-[#46d1f7] border-[2px] cursor-pointer ${sizes.includes("L")? "bg-green-400 text-black border-[#46d1f7]": ""}`} onClick={()=>setSizes(prev=>prev.includes("L")? prev.filter(item => item !=="L"):[...prev,"L"])}>L</div>
                   <div className={`px-[20px] py-[7px] rounded-lg bg-slate-600 text-[18px] hover:border-[#46d1f7] border-[2px] cursor-pointer ${sizes.includes("XL")? "bg-green-400 text-black border-[#46d1f7]": ""}`} onClick={()=>setSizes(prev=>prev.includes("XL")? prev.filter(item => item !=="XL"):[...prev,"XL"])}>XL</div>
-                  <div className={`px-[20px] py-[7px] rounded-lg bg-slate-600 text-[18px] hover:border-[#46d1f7] border-[2px] cursor-pointer ${sizes.includes("XXL")? "bg-green-400 text-black border-[#46d1f7]": ""}`} onClick={()=>setSizes(prev=>prev.includes("XXL")? prev.filter(item => item !=="XXL"):[...prev,"XX4"])}>XXL</div>
+                  <div className={`px-[20px] py-[7px] rounded-lg bg-slate-600 text-[18px] hover:border-[#46d1f7] border-[2px] cursor-pointer ${sizes.includes("XXL")? "bg-green-400 text-black border-[#46d1f7]": ""}`} onClick={()=>setSizes(prev=>prev.includes("XXL")? prev.filter(item => item !=="XXL"):[...prev,"XXL"])}>XXL</div>
 
                 </div>
           </div>
@@ -258,7 +266,7 @@ const Add = () => {
             <label htmlFor="checkbox" className='text-[18px] md:text-[22px] font-semibold'>Add to BestSeller</label>
           </div>
           <button className='w-[140px] px-[20px] py-[20px] rounded-xl bg-[#65d8f7] flex items-center justify-center gap-[10px] text-black active:bg-slate-700 active:text-white active:border-[2px] border-white'>
-            Add Product
+            {loading ? <Loading/> : "Add Product"}
           </button>
         </form>
       </div>

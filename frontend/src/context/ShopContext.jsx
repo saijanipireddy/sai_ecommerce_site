@@ -1,4 +1,3 @@
-// src/context/ShopContext.jsx
 import React, { useContext, useState, createContext, useEffect } from 'react';
 import { authDataContext } from './authContext';
 import { userDataContext } from './UserContext';
@@ -6,10 +5,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// ✅ Create Context
+
 export const shopDataContext = createContext();
 
-export function ShopProvider({ children }) {   // ✅ use function for consistency
+export function ShopProvider({ children }) {  
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
   const [showSearch, setShowSearch] = useState(false);

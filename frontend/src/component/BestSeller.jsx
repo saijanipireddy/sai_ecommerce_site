@@ -8,7 +8,7 @@ function BestSeller() {
   let [bestSeller,setBestSeller] = useState([])
 
  useEffect(() => {
-  setBestSeller(products.slice(0, 4)); // Show first 4 products
+  setBestSeller(products.slice(0, 4)); 
 }, [products]);
   return (
     <div>

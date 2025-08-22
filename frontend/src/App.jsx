@@ -14,9 +14,12 @@ import Cart from './pages/Cart';
 import PlaceOrder from './pages/PlaceOrder';
 import Orders from './pages/Orders';
 
-// ✅ Import providers
+
+import { ToastContainer, toast } from 'react-toastify';
 import AuthProvider from './context/authContext';
 import UserProvider, { userDataContext } from './context/UserContext';
+import NotFound from './pages/NotFound';
+import Ai from './component/Ai';
 
 function App() {
   return (
@@ -35,7 +38,9 @@ function AppContent() {
   const hideNavOn = ['/login', '/signup'];
 
   return (
+    
     <>
+    <ToastContainer />
       {!hideNavOn.includes(location.pathname) && <Nav />}
       <Routes>
         <Route
@@ -158,7 +163,9 @@ function AppContent() {
             )
           }
         />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
+      <Ai/>
     </>
   );
 }

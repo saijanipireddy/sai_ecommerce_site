@@ -9,6 +9,7 @@ import { auth, provider } from '../../utils/Firebase';
 // ✅ Correct context imports
 import { authDataContext } from "../context/authContext";
 import { userDataContext } from "../context/UserContext";
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -31,8 +32,10 @@ const Login = () => {
       getCurrentUser();
       navigate('/');
       console.log(result.data);
+      toast.success(" UserLogin Successful");
     } catch (error) {
       console.log(error);
+      toast.error("UserLogin Failed");
     }
   };
 
@@ -51,8 +54,10 @@ const Login = () => {
       console.log(result.data);
       getCurrentUser();
       navigate('/');
+      toast.success(" UserLogin Successful");
     } catch (error) {
       console.log(error);
+      toast.error("UserLogin Failed");
     }
   };
 

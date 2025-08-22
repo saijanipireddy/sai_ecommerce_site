@@ -6,6 +6,7 @@ import axios from 'axios';
 import { authDataContext } from '../context/AuthContext';
 import { adminDataContext } from '../context/AdminContext';  
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   let [show,setShow]=useState(false);
@@ -23,12 +24,14 @@ const Login = () => {
         password
       }, { withCredentials: true });
       console.log(result.data);
+      toast.success(" AdminLogin Successfull");
 
       await getAdmin();
       navigate("/");
       await axios.get(`${serverUrl}/api/user/getAdmin`, { withCredentials: true });
     } catch (error) {
       console.log(error)
+      toast.error("AdminLogin Failed");
     }  
   }
 

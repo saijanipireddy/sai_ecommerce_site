@@ -6,6 +6,9 @@ import { shopDataContext } from '../context/ShopContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { authDataContext } from '../context/authContext'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 function PlaceOrder() {
@@ -70,18 +73,22 @@ function PlaceOrder() {
           );
           console.log(result.data);
           if(result.data){
+            toast.success("Order Placed Successfully!");
             setCartItem({})
             navigate("/order")
           }else{
             console.log(result.data.message)
+             toast.error("Failed to Place Order");
           }
           break;
         default:
+          toast.info("Online payment not implemented yet.");
           break;
       }
 
       } catch (error) {
         console.log(error)
+        toast.error("Something went wrong. Please try again later.");
       }
     }
   return (

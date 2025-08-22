@@ -5,7 +5,7 @@ import Title from './Title'
 function CartTotal() {
     const { currency, delivery_fee, cartItem, products } = useContext(shopDataContext);
 
-    // Calculate subtotal
+    
     let subtotal = 0;
     for (const productId in cartItem) {
         const product = products.find(p => p._id === productId);
