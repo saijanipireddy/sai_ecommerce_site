@@ -10,6 +10,7 @@ import cartRoutes from './routes/cartRoutes.js';
 import oredrRoutes from './routes/orderRoutes.js';
 
 
+
 dotenv.config();
 console.log("Cloudinary Vars:", process.env.CLOUDINARY_NAME, process.env.CLOUDINARY_API_KEY);
 
@@ -32,7 +33,7 @@ app.use("/api/auth",authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/product",productRoutes)
 app.use("/api/cart", cartRoutes)
-app.use("/api/order",oredrRoutes)
+app.use("/api/order", oredrRoutes)
 
 
 app.get("/",(req,res)=>{
