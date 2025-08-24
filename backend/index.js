@@ -21,7 +21,7 @@ let app = express();
 
 app.use(cookieParser());
 app.use(cors({
-    origin: ["https://cs-online-store-frontend.onrender.com","http://localhost:5174"],
+    origin: ["https://cs-online-store-frontend.onrender.com","https://cs-online-store-admin.onrender.com"],
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
 }))
