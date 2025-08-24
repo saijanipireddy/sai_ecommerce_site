@@ -5,7 +5,7 @@ function NewLetterBox() {
         e.preventDefault()
     }
   return (
-    <div className='w-[100%] h-[40vh] flex items-center justify-start flex-col bg-gradient-to-l from-[#141414] to-[#0c2025] gap-[20px]'>
+    <div className='w-[100%] h-[40vh] flex items-center justify-start flex-col bg-gradient-to-l from-[#141414] to-[#0c2025] gap-[20px] pt-[40px]'>
         <p className='md:text-[30px] text-[20px] text-[#a5faf7] font-semibold px-[20px]'>Subscribe Now & 20% Off</p>
         <p className='md:text-[18px] text-[14px] text-center  text-blue-100 font-semibold px-[20px]'>
             Subscribe Now and Enjoy Exclusive Savings,Special Deals and Early Access to New collection.
