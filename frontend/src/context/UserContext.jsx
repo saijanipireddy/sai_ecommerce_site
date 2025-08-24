@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { authDataContext } from './authContext';
 import axios from 'axios';
+import { authDataContext } from './AuthContext';
 
 
 axios.defaults.withCredentials = true; 

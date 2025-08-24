@@ -3,12 +3,12 @@ import { IoSearchCircleOutline, IoSearchCircleSharp, IoCartOutline } from "react
 import { FaCircleUser } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { authDataContext } from '../context/authContext';
 import { IoMdHome } from "react-icons/io";
 import { HiOutlineCollection } from "react-icons/hi";
 import { MdOutlineContacts } from "react-icons/md";
 import { shopDataContext } from '../context/ShopContext';
 import { userDataContext } from '../context/UserContext';
+import { authDataContext } from '../context/AuthContext';
 
 
 

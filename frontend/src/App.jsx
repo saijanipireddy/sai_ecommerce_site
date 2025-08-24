@@ -16,10 +16,11 @@ import Orders from './pages/Orders';
 
 
 import { ToastContainer, toast } from 'react-toastify';
-import AuthProvider from './context/authContext';
+
 import UserProvider, { userDataContext } from './context/UserContext';
 import NotFound from './pages/NotFound';
 import Ai from './component/Ai';
+import AuthProvider from './context/AuthContext';
 
 function App() {
   return (

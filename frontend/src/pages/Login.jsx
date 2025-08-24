@@ -6,10 +6,11 @@ import axios from 'axios';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../utils/Firebase';
 
-// ✅ Correct context imports
-import { authDataContext } from "../context/authContext";
+
+
 import { userDataContext } from "../context/UserContext";
 import { toast } from 'react-toastify';
+import { authDataContext } from '../context/AuthContext';
 
 const Login = () => {
   const [show, setShow] = useState(false);

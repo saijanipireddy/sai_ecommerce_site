@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { IoMdEye } from "react-icons/io";
-import { authDataContext } from '../context/authContext';
 import axios from 'axios';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../utils/Firebase';
 import { getCurrentUser } from '../../../backend/controllers/userController';
 import { toast } from 'react-toastify';
+import { authDataContext } from '../context/AuthContext';
 
 
 
