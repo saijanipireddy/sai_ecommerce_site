@@ -19,7 +19,7 @@ function ProductDetail() {
   const [image3, setImage3] = useState('');
   const [image4, setImage4] = useState('');
   const [size, setSize] = useState('');
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const fetchProductData = () => {
     const foundProduct = products.find(item => item._id === productId);
@@ -37,69 +37,73 @@ function ProductDetail() {
     fetchProductData();
   }, [productId, products]);
 
-  useEffect(() => {
-    if (productData) {
-      console.log("Product Data:", productData);
-    }
-  }, [productData]);
-    
-  
   const handleAddToCart = () => {
-  if (!size) {
-    toast.warning("Please select a size before adding to cart!");
-    return;
-  }
-
-  setLoading(true);
-  addtoCart(productData._id, size);
-
-  setTimeout(() => {
-    toast.success(`${productData.name} added to cart!`);
-    setLoading(false);
-  }, 1000); 
-};
-
+    if (!size) {
+      toast.warning("Please select a size before adding to cart!");
+      return;
+    }
+    setLoading(true);
+    addtoCart(productData._id, size);
+    setTimeout(() => {
+      toast.success(`${productData.name} added to cart!`);
+      setLoading(false);
+    }, 1000);
+  };
 
   return productData ? (
     <div>
-      <div className='w-[100vw] h-[130vh] md:h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] flex items-center justify-start flex-col lg:flex-row gap-[20px]'>
-        <div className='lg:w-[50vw] md:w-[90vw] lg:h-[90vh] h-[50vh] mt-[70px] flex items-center justify-center md:gap-[10px] gap-[30px] flex-col-reverse lg:flex-row'>
-          <div className='lg:w-[20%] md:w-[80%] h-[10%] lg:h-[80%] flex items-center justify-center gap-[50px] lg:gap-[20px] lg:flex-col flex-wrap'>
+      <div className="w-full min-h-screen bg-gradient-to-l from-[#141414] to-[#0c2025] flex flex-col lg:flex-row items-start justify-start gap-6 pt-20">
+        {/* Images Section */}
+        <div className="lg:w-1/2 w-full flex flex-col lg:flex-row items-center justify-center gap-4">
+          <div className="lg:w-[20%] flex lg:flex-col flex-row gap-3 flex-wrap items-center justify-center">
             {[image1, image2, image3, image4].map((img, idx) => (
               img && (
-                <div key={idx} className='md:w-[100px] w-[50px] h-[50px] md:h-[110px] bg-slate-300 border-[1px] border-[#80808049] rounded-md'>
-                  <img src={img} alt="" className='w-[100%] h-[100%] cursor-pointer rounded-md' onClick={() => setImage(img)} />
+                <div key={idx} className="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-28 bg-slate-300 border border-[#80808049] rounded-md overflow-hidden">
+                  <img
+                    src={img}
+                    alt="thumb"
+                    className="w-full h-full object-cover cursor-pointer"
+                    onClick={() => setImage(img)}
+                  />
                 </div>
               )
             ))}
           </div>
-          <div className='lg:w-[60%] w-[80%] lg:h-[78%] h-[70%] border-[1px] border-[#80808049] rounded-md overflow-hidden'>
-            <img src={image} alt="" className='w-[100%] lg:h-[100%] h-[100%] text-[30px] text-[white] text-center rounded-md object-fill' />
+          <div className="lg:w-[70%] w-[85%] h-[350px] md:h-[450px]  overflow-hidden shadow-md">
+            <img src={image} alt="main" className="w-full h-full object-contain rounded-lg" />
           </div>
         </div>
-        <div className='lg:w-[50vw] w-[100vw] lg:h-[75vh] h-[40vh] lg:mt-[80px] flex items-start justify-start flex-col py-[20px] px-[30px] md:pb-[20px] md:pl-[20px] lg:pl-[0px] lg:px-[0px] lg:py-[0px] gap-[10px]'>
-          <h1 className='text-[40px] font-semibold text-[aliceblue]'>{productData.name?.toUpperCase()}</h1>
-          <div className='flex items-center gap-1'>
-            <FaStar className='text-[20px] fill-[#FFD700]' />
-            <FaStar className='text-[20px] fill-[#FFD700]' />
-            <FaStar className='text-[20px] fill-[#FFD700]' />
-            <FaStar className='text-[20px] fill-[#FFD700]' />
-            <FaStarHalfStroke className='text-[20px] fill-[#FFD700]' />
-            <p className='text-[18px] font-semibold pl-[5px] text-[white]'>(124)</p>
+
+       
+        <div className="lg:w-1/2 w-full flex flex-col gap-3 px-5 lg:px-0">
+          <h1 className="text-2xl md:text-3xl text-white lg:text-4xl font-semibold text-aliceblue">{productData.name?.toUpperCase()}</h1>
+
+          <div className="flex items-center gap-1">
+            <FaStar className="text-lg fill-[#FFD700]" />
+            <FaStar className="text-lg fill-[#FFD700]" />
+            <FaStar className="text-lg fill-[#FFD700]" />
+            <FaStar className="text-lg fill-[#FFD700]" />
+            <FaStarHalfStroke className="text-lg fill-[#FFD700]" />
+            <p className="text-sm md:text-base font-medium text-white pl-1">(124)</p>
           </div>
-          <p className='text-[30px] font-semibold pl-[5px] text-[white]'>
-            {currency} {productData.price}
+
+          <p className="text-xl md:text-2xl font-semibold text-white">{currency} {productData.price}</p>
+
+          <p className="text-sm md:text-base lg:text-lg text-white leading-relaxed">
+            {productData.description} Stylish, breathable cotton with a modern slim fit. Easy to wash, comfortable, and designed for effortless style.
           </p>
-          <p className='w-[80%] md:w-[60%] text-[20px] font-semibold pl-[5px] text-[white]'>
-            {productData.description} and stylish, breathable cotton cloth with a modern slim fit. Easy to wash, super comfortable, and designed for effortless style.
-          </p>
-          <div className='flex flex-col gap-[10px] my-[10px]'>
-            <p className='text-[25px] font-semibold pl-[5px] text-[white]'>Select Size</p>
-            <div className='flex gap-2'>
+
+          <div className="flex flex-col gap-3 mt-3">
+            <p className="text-lg md:text-xl font-semibold text-white">Select Size</p>
+            <div className="flex flex-wrap gap-3">
               {productData.sizes?.map((item, index) => (
                 <button
                   key={`${item}-${index}`}
-                  className={`border py-2 px-4 bg-slate-300 rounded-md ${item === size ? 'bg-black text-[#2f97f1] text-[20px]' : ''}`}
+                  className={`px-4 py-2 rounded-lg border transition-all duration-200 shadow-sm ${
+                    item === size
+                      ? 'bg-black text-[#2f97f1] font-bold scale-105'
+                      : 'bg-slate-200 hover:bg-slate-300'
+                  }`}
                   onClick={() => setSize(item)}
                 >
                   {item}
@@ -107,37 +111,39 @@ function ProductDetail() {
               ))}
             </div>
             <button
-              className='text-[16px] active:bg-slate-500 cursor-pointer bg-[#495b61c9] py-[10px] px-[20px] rounded-2xl mt-[10px] border-[1px] border-[#80808049] text-[white] shadow-md shadow-black '
+              className="w-fit bg-[#495b61c9] text-white px-6 py-2 rounded-xl border border-[#80808049] shadow-md hover:bg-[#3c4a4ec9] transition-all"
               onClick={handleAddToCart}
             >
-             {loading ? <Loading/> : "Add To Cart"}
+              {loading ? <Loading /> : "Add To Cart"}
             </button>
           </div>
-          <div className='w-[90%] h-[1px] bg-slate-700'></div>
-          <div className='w-[80%] text-[16px] text-white'>
+
+          <div className="w-full h-px bg-slate-700 my-3"></div>
+
+          <div className="text-xs md:text-sm text-white space-y-1 pb-5">
             <p>100% Original Product.</p>
-            <p>Cash on delivery available in this product.</p>
-            <p>Easy return and Exchange policy within 7 days.</p>
+            <p>Cash on delivery available.</p>
+            <p>Easy return and exchange within 7 days.</p>
           </div>
         </div>
       </div>
-      <div className='w-[100%] min-h-[70vh] bg-gradient-to-l from-[#141414] to-[#0c2025] flex items-start justify-start flex-col overflow-x-hidden'>
-        <div className='flex px-[20px] mt-[90px] lg:ml-[80px] ml-[0px] lg:mt-[0px]'>
-          <p className='border px-5 py-3 text-sm text-white'>Description</p>
-          <p className='border px-5 py-3 text-sm text-white'>Reviews (124)</p>
+
+     
+      <div className="w-full min-h-[70vh] bg-gradient-to-l from-[#141414] to-[#0c2025] pt-15 flex flex-col">
+        <div className="flex px-5 lg:px-20 gap-3">
+          <p className="border px-4 py-2 text-xs md:text-sm text-white">Description</p>
+          <p className="border px-4 py-2 text-xs md:text-sm text-white">Reviews (124)</p>
         </div>
-        <div className='w-[80%] md:h-[150px] h-[220px] bg-[#3336397c] text-white text-[13px] md:text-[15px] lg:text-[20px] px-[10px] md:px-[30px] lg:ml-[100px] ml-[20px]'>
-          <p className='w-[95%] h-[90%] flex items-center justify-center'>
-            Upgrade your wardrobe with this stylish slim-fit cotton shirt, available now on CS-Store. Crafted from breathable,
-            high-quality fabric, it offers all-day comfort and effortless style. Easy to maintain and perfect for any setting, this
-            shirt is a must-have essential for those who value both fashion and function.
-          </p>
+        <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto my-5 bg-[#3336397c] text-white text-sm md:text-base lg:text-lg px-4 md:px-6 py-5 rounded-md">
+          Upgrade your wardrobe with this stylish slim-fit cotton shirt, available now on CS-Store. Crafted from breathable,
+          high-quality fabric, it offers all-day comfort and effortless style. Easy to maintain and perfect for any setting, this
+          shirt is a must-have essential for those who value both fashion and function.
         </div>
         <RelatedProduct category={productData.category} subCategory={productData.subCategory} currentProductId={productData._id} />
       </div>
     </div>
   ) : (
-    <div className='opacity-0'></div>
+    <div className="opacity-0"></div>
   );
 }
 
