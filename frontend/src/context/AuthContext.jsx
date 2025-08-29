@@ -4,7 +4,7 @@ import React, { createContext } from "react";
 export const authDataContext = createContext();
 
 export function AuthProvider({ children }) {
-  const serverUrl = "http://localhost:8000"; 
+  const serverUrl = "https://sai-ecommerce-site.onrender.com"; 
 
   return (
     <authDataContext.Provider value={{ serverUrl }}>
