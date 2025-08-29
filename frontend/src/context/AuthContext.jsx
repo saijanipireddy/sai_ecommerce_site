@@ -4,7 +4,7 @@ import React, { createContext } from "react";
 export const authDataContext = createContext();
 
 export function AuthProvider({ children }) {
-  const serverUrl = "https://cs-online-store-backend.onrender.com"; 
+  const serverUrl = "http://localhost:8000"; 
 
   return (
     <authDataContext.Provider value={{ serverUrl }}>

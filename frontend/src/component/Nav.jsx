@@ -47,10 +47,10 @@ const Nav = () => {
       
       <div className='w-[50%] lg:w-[40%] hidden md:flex'>
         <ul className='flex items-center justify-center gap-[19px] text-white'>
+          <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-[20px]' onClick={()=>navigate("/")}>HOME</li>
           <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-[20px]' onClick={()=>navigate("/collection")}>COLLECTIONS</li>
           <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-[20px]' onClick={()=>navigate("/about")}>ABOUT</li>
           <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-[20px]' onClick={()=>navigate("/contact")}>CONTACT</li>
-          <li className='text-[15px] hover:bg-slate-500 cursor-pointer bg-[#000000c9] py-[10px] px-[20px] rounded-[20px]' onClick={()=>navigate("/")}>HOME</li>
         </ul>
       </div>
 

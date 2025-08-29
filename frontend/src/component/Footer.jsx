@@ -36,8 +36,8 @@ function Footer() {
         <div className="w-full md:w-1/3 flex flex-col items-center md:items-end">
           <h3 className="text-lg font-semibold mb-2">GET IN TOUCH</h3>
           <ul className="flex flex-col gap-1 text-sm md:text-base text-center md:text-right">
-            <li>+91-7680914066</li>
-            <li>cjanipireddy@gmail.com</li>
+            <li>+91-9666592066</li>
+            <li>saijanipireddy@gmail.com</li>
             <li>+1-123-456-7890</li>
             <li>admin@cs.com</li>
           </ul>

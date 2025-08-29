@@ -21,7 +21,7 @@ let app = express();
 
 app.use(cookieParser());
 app.use(cors({
-    origin: ["https://cs-online-store-frontend.onrender.com","https://cs-online-store-admin.onrender.com"],
+    origin: ["http://localhost:5173","http://localhost:5174"],
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
 }))
@@ -41,6 +41,6 @@ app.get("/",(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log("Server Running Successfully");
+    console.log("Server Running Successfully", port);
     connectDB()
 })

@@ -18,7 +18,7 @@ function Contact() {
           </div>
 
           <div className='lg:w-[80%] w-[100%] text-white md:text-[16px] text-[13px]'>
-            <p>Tel: +91-7680914066 </p>
+            <p>Tel: +91-9666592066 </p>
             <p>Email: admin@cs.com</p>
           </div>
 
