@@ -21,7 +21,7 @@ let app = express();
 
 app.use(cookieParser());
 app.use(cors({
-    origin: ["http://localhost:5173","http://localhost:5174"],
+    origin: ["https://sai-ecommerce-site-frontend.onrender.com","https://sai-ecommerce-site-admin.onrender.com"],
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
 }))
