@@ -1,4 +1,4 @@
-# Voice-Enabled E-Commerce Platform
+# Voice-Enabled E-Commerce Platform 
 
 A full-stack MERN e-commerce application with **voice commands for page navigation** and a **chatbot for querying products and orders**.  
 Built to enhance accessibility and provide a futuristic shopping experience.
