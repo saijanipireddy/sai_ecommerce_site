@@ -141,7 +141,7 @@ function PlaceOrder() {
              <div className='py-[10px]'>
             <Title text1={'PAYMENT'} text2={'METHOD'}/>
           </div>
-          <div className='w-[100%] h-[30vh] lg:h-[100px] flex items-start mt-[20px] lg:mt-[0px] justify-center gap-[50px]'>
+          <div className='w-[100%] h-[30vh] lg:h-[100px] flex items-start mt-[20px] lg:mt-[0px] justify-center gap-[50px] mb-13'>
             <button onClick={()=>setMethod('razorpay')} className={`w-[150px] h-[50px] rounded-sm ${method==='razorpay' ? 'border-[5px] border-blue-900 rounded-sm' : ''}`}>
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPZ40xDtGQlNnEtDL2er6ICR1UMWoLcSiU0AML-DkEH616YObjoDhq-o2U_0ncsGtdOqU&usqp=CAU" alt="" className='w-[100%] h-[100%] object-fill rounded-sm' />
             </button>
