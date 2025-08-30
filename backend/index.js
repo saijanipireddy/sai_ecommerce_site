@@ -8,6 +8,7 @@ import userRoutes from './routes/userRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import oredrRoutes from './routes/orderRoutes.js';
+import assistantRoutes from './routes/assistantRoutes.js';
 
 
 
@@ -34,6 +35,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/product",productRoutes)
 app.use("/api/cart", cartRoutes)
 app.use("/api/order", oredrRoutes)
+app.use("/assistant", assistantRoutes);
 
 
 app.get("/",(req,res)=>{
