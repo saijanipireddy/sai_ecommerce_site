@@ -3,7 +3,7 @@ import React, { createContext } from 'react'
 export const authDataContext = createContext()
 
 const AuthContext = ({ children }) => {
-  const serverUrl = "https://sai-ecommerce-site.onrender.com"
+  const serverUrl = "https://sai-ecommerce-site-backend.onrender.com"
   const value = { serverUrl }
 
   return (
