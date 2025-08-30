@@ -13,15 +13,25 @@ Built to enhance accessibility and provide a futuristic shopping experience.
 
 ---
 
-## 👤 Demo Credentials
+## 👤 Demo Credentials For Website
 
 Use the following credentials to explore the demo:
 
-Email: demo@demo.com
-Password: Demo123
+Email: saikumarj@gmail.com
+Password: saikumar@123
 
-yaml
-Copy code
+
+---
+
+---
+
+## 👤 Demo Credentials For Admin Panel
+
+Use the following credentials to explore the demo:
+
+Email: admin@cs.com
+Password: admin12345678
+
 
 ---
 
@@ -38,9 +48,8 @@ Copy code
 
 ## 📸 Screenshots / GIFs
 
-![Home Page](./screenshots/home.png)  
-![Voice Command Demo](./screenshots/voice-demo.gif)  
-![Chatbot Demo](./screenshots/chatbot-demo.gif)  
+![Home Page](https://res.cloudinary.com/dk9buau62/image/upload/v1756552521/Screenshot_138_l6jp4s.png)  
+![Products page](https://res.cloudinary.com/dk9buau62/image/upload/v1756552608/Screenshot_140_vktddg.png)
 
 ---
 
@@ -57,25 +66,21 @@ Copy code
 ## 🚀 Installation (For Developers)
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone https://github.com/saijanipireddy/sai_ecommerce_site
+   
 Install dependencies for frontend, backend, and admin:
 
-bash
-Copy code
 cd frontend && npm install
 cd backend && npm install
 cd admin && npm install
 Run the application:
 
-bash
-Copy code
 # Frontend
-npm start
+npm run dev
 # Backend
 npm run dev
 # Admin
-npm start
+npm run dev
 📝 Usage
 Use demo credentials to log in and explore
 
@@ -92,22 +97,5 @@ Personalized chatbot recommendations
 
 Admin voice commands for querying stats
 
-📄 License
-This project is licensed under the MIT License.
-
-yaml
-Copy code
-
 ---
 
-💡 **Tip:** After adding this README to GitHub, add a **short GIF at the top showing voice commands in action**. Recruiters will see your innovation instantly, even before exploring the live demo.  
-
-If you want, I can also **draft a mini “portfolio-ready” README version** that’s **ultra-short and punchy** for recruiters who skim quickly. Do you want me to do that too?
-
-
-
-
-
-
-
-Ask ChatGPT
