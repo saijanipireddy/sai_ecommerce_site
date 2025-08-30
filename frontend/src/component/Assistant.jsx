@@ -68,7 +68,7 @@ export default function Assistant() {
 
       // 🔹 Call backend
       const res = await axios.post(
-        "http://localhost:8000/assistant/chat",
+        "https://sai-ecommerce-site-backend.onrender.com/assistant/chat",
         { message: msgText },
         { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }
       );
