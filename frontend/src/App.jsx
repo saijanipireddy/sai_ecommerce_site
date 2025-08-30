@@ -21,6 +21,7 @@ import UserProvider, { userDataContext } from './context/UserContext';
 import NotFound from './pages/NotFound';
 import Ai from './component/Ai';
 import AuthProvider from './context/AuthContext';
+import Assistant from './component/Assistant';
 
 function App() {
   return (
@@ -167,6 +168,7 @@ function AppContent() {
         <Route path="*" element={<NotFound/>} />
       </Routes>
       <Ai/>
+      <Assistant />
     </>
   );
 }
